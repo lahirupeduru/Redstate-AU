@@ -95,17 +95,23 @@ section{padding:88px 0;border-bottom:1px solid var(--divider)}
 .sec-head p{max-width:520px;color:var(--n700);font-size:16px}
 
 /* ---------- Hero ---------- */
-.hero{padding:70px 0 84px}
-.hero-grid{display:block}
-.hero-grid--with-media{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-.hero h1{font-size:clamp(48px,8vw,96px);margin:18px 0 24px;max-width:14ch}
-.hero .lead{font-size:clamp(17px,2vw,21px);color:var(--n800);max-width:640px;margin-bottom:32px}
+.hero{padding:0 0 84px}
+.hero-photo{position:relative;background-size:cover;background-position:right center;background-repeat:no-repeat}
+/* White blend: solid cream under the text (left) fading to reveal the photo (right) */
+.hero-photo::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg, var(--bg) 0%, var(--bg) 34%, color-mix(in srgb,var(--bg) 78%,transparent) 50%, color-mix(in srgb,var(--bg) 20%,transparent) 68%, transparent 82%)}
+.hero-inner{position:relative;z-index:1;padding:104px 0 118px}
+.hero-text{max-width:600px}
+.hero h1{font-size:clamp(48px,8vw,92px);margin:18px 0 24px;max-width:14ch}
+.hero .lead{font-size:clamp(17px,2vw,21px);color:var(--n800);max-width:560px;margin-bottom:32px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.hero-media{aspect-ratio:4/5;background:var(--n900);position:relative;overflow:hidden}
-.hero-media img{width:100%;height:100%;object-fit:cover}
-.hero-media .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  color:var(--n500);font-size:13px;text-align:center;padding:20px;background:
-  repeating-linear-gradient(45deg,#242221,#242221 12px,#201e1d 12px,#201e1d 24px)}
+@media(max-width:760px){
+  /* On small screens the photo sits behind the text, so veil it top-to-bottom for readability */
+  .hero-photo{background-position:72% center}
+  .hero-photo::before{background:
+    linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb,var(--bg) 86%,transparent) 42%, color-mix(in srgb,var(--bg) 90%,transparent) 100%)}
+  .hero-inner{padding:64px 0 72px}
+}
 
 /* ---------- Stats ---------- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-top:8px}
@@ -207,8 +213,6 @@ footer{background:var(--text);color:#fff;padding:60px 0 34px;border:0}
 
 /* ---------- Responsive ---------- */
 @media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr}
-  .hero-media{order:-1;aspect-ratio:16/11}
   .cards,.steps,.stats{grid-template-columns:1fr 1fr}
   .stat:nth-child(2n),.card:nth-child(2n){border-right:0}
   .card,.step{border-bottom:1px solid var(--line)}
@@ -260,17 +264,18 @@ footer{background:var(--text);color:#fff;padding:60px 0 34px;border:0}
 <main id="top">
 
   <!-- HERO -->
-  <!-- To add a hero photo back later: change "hero-grid" to "hero-grid hero-grid--with-media"
-       and paste the .hero-media block (see README) back in after the text column. -->
+  <!-- To swap the hero photo: replace images/hero-kitchen.jpg (landscape, ~1600x900). -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">Narre Warren · Melbourne, VIC</span>
-        <h1>Property kept in working order.</h1>
-        <p class="lead">Redstate Facility Services cleans and maintains homes and commercial buildings across Melbourne's south‑east. We care for your property while you care for your growth.</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn--accent">Book a free site visit</a>
-          <a href="#services" class="btn btn--ghost">See all services</a>
+    <div class="hero-photo" style="background-image:url('images/hero-kitchen.jpg')">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <span class="eyebrow">Narre Warren · Melbourne, VIC</span>
+          <h1>Property kept in working order.</h1>
+          <p class="lead">Redstate Facility Services cleans and maintains homes and commercial buildings across Melbourne's south‑east. We care for your property while you care for your growth.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn--accent">Book a free site visit</a>
+            <a href="#services" class="btn btn--ghost">See all services</a>
+          </div>
         </div>
       </div>
     </div>
