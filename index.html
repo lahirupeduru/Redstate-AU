@@ -84,6 +84,10 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 8
 .brand small{display:block;font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--n600);margin-top:2px}
 .brand-ash{color:var(--ash)}
 .foot-top .brand .brand-ash{color:var(--ash-dark)}
+/* Stretch REDSTATE to exactly the width of the tagline below it */
+.brand-name{display:flex;flex-direction:column}
+.brand-word{display:flex;justify-content:space-between;letter-spacing:0;line-height:1.05}
+.brand-word i{font-style:normal}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{font-size:14px;font-weight:600;color:var(--n800);transition:color .12s}
 .nav-links a:hover{color:var(--accent)}
@@ -253,7 +257,7 @@ footer{background:var(--text);color:#fff;padding:60px 0 34px;border:0}
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Red State home">
       <svg viewBox="0 0 120 120" aria-hidden="true"><rect width="120" height="120" fill="#ec3013"/><rect x="28" y="34" width="15" height="54" fill="#fff"/><rect x="52" y="58" width="15" height="30" fill="#fff"/><rect x="76" y="34" width="15" height="54" fill="#fff"/></svg>
-      <span>RED<span class="brand-ash">STATE</span><small>FACILITY SERVICES</small></span>
+      <span class="brand-name"><span class="brand-word"><i>R</i><i>E</i><i>D</i><i class="brand-ash">S</i><i class="brand-ash">T</i><i class="brand-ash">A</i><i class="brand-ash">T</i><i class="brand-ash">E</i></span><small>FACILITY SERVICES</small></span>
     </a>
     <nav class="nav-links" id="menu">
       <a href="#services">Services</a>
@@ -453,7 +457,7 @@ footer{background:var(--text);color:#fff;padding:60px 0 34px;border:0}
     <div class="foot-top">
       <div class="brand">
         <svg viewBox="0 0 120 120" aria-hidden="true" style="width:40px;height:40px"><rect width="120" height="120" fill="#ec3013"/><rect x="28" y="34" width="15" height="54" fill="#fff"/><rect x="52" y="58" width="15" height="30" fill="#fff"/><rect x="76" y="34" width="15" height="54" fill="#fff"/></svg>
-        <span>RED<span class="brand-ash">STATE</span><small>FACILITY SERVICES</small></span>
+        <span class="brand-name"><span class="brand-word"><i>R</i><i>E</i><i>D</i><i class="brand-ash">S</i><i class="brand-ash">T</i><i class="brand-ash">A</i><i class="brand-ash">T</i><i class="brand-ash">E</i></span><small>FACILITY SERVICES</small></span>
       </div>
       <p class="foot-tag">We care for your property while you care for your growth.</p>
     </div>
