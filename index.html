@@ -174,10 +174,6 @@ section{padding:88px 0;border-bottom:1px solid var(--divider)}
 .fac:nth-last-child(-n+2){border-bottom:0}
 .fac h3{font-size:19px;margin-bottom:8px}
 .fac p{color:var(--n700);font-size:15px}
-.road{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
-.road div{border-top:3px solid var(--text);padding-top:16px}
-.road .t{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent)}
-.road p{margin-top:8px;color:var(--n700);font-size:15px}
 
 /* ---------- Packages ---------- */
 .pk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
@@ -275,7 +271,6 @@ header.scrolled .nav{height:60px}
   .showcase-media{max-width:400px;margin:0 auto;width:100%}
   .fac-grid{grid-template-columns:1fr}
   .fac{border-right:0}
-  .road{grid-template-columns:1fr}
   .pk-grid{grid-template-columns:1fr}
   .pk-notes{grid-template-columns:1fr}
   .pk-note{border-right:0;border-bottom:1px solid var(--line)}
@@ -426,11 +421,6 @@ header.scrolled .nav{height:60px}
         <div class="fac"><h3>Scheduled maintenance</h3><p>Planned visit calendars per site, with reactive call‑outs handled by the same crew that knows the building.</p></div>
         <div class="fac"><h3>Reporting &amp; compliance</h3><p>Visit records, site checklists, SWMS and insurance documentation supplied for every contract.</p></div>
       </div>
-      <div class="road">
-        <div><div class="t">NOW</div><p>Residential cleaning subscriptions across Narre Warren and the surrounding suburbs.</p></div>
-        <div><div class="t">NEXT</div><p>Strata and small commercial contracts with planned maintenance calendars.</p></div>
-        <div><div class="t">THEN</div><p>Integrated facilities and asset management for portfolios across Australia.</p></div>
-      </div>
     </div>
   </section>
 
@@ -556,7 +546,7 @@ header.scrolled .nav{height:60px}
   // final timeout — so content can NEVER stay hidden if observers are quiet.
   if(!reduceMotion){
     var solo=['.hero-text','.sec-head','.showcase .txt','.showcase-media','.contact-info','.form'];
-    var grids=['.stats','.cards','.steps','.svc','.fac-grid','.road','.pk-grid','.pk-notes'];
+    var grids=['.stats','.cards','.steps','.svc','.fac-grid','.pk-grid','.pk-notes'];
     solo.forEach(function(sel){document.querySelectorAll(sel).forEach(function(el){el.classList.add('reveal');});});
     grids.forEach(function(sel){document.querySelectorAll(sel).forEach(function(el){
       el.classList.add('reveal-stagger');
